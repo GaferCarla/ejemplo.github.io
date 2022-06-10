@@ -1,0 +1,153 @@
+﻿<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+@{
+    ViewBag.Title = "Añadir_encuesta";
+    @Styles.Render("~/Content/añadirEncuesta.css");
+
+}
+
+
+<body class='snippet-body'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 text-center p-0 mt-3 mb-2">
+                <div class="card px-4 pt-6 pb-0 mt-3 mb-3">
+                    <h2 id="heading" class="mt-3">Añadir encuesta</h2>
+
+                    <form id="msform">
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="account"><strong>Datos</strong></li>
+                            <li id="blockQuestion"><strong>Preguntas</strong></li>
+                            <li id="blockAnswer"><strong>Respuestas</strong></li>
+                            <li id="confirm"><strong>Finalizar</strong></li>
+                        </ul>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> <br> <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Datos de la encuesta:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Paso 1 - 4</h2>
+                                    </div>
+                                </div>
+
+                                <div class="row px-4 justify-content-center">
+                                    <label>Título de la encuesta</label>
+                                    <input type="text" required>
+                                </div>
+
+                                <div class="row px-4 justify-content-center">
+                                    <label>Selecciona los roles</label>
+                                    <select id="choices-multiple-remove-button" placeholder="Tags de roles" multiple>
+                                        <option value="rol1" onclick="filterSelection('rol1')">Rol 1</option>
+                                        <option value="rol2">Rol 2</option>
+                                        <option value="rol3">Rol 3</option>
+                                        <option value="rol4">Rol 4</option>
+                                        <option value="rol5">Maestro</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="row px-4 justify-content-center">
+                                    <label>Selecciona los grupos</label>
+                                    <select id="choices-multiple-remove-button" placeholder="Tags de grupos" multiple>
+                                        <option value="group1" onclick="filterSelection('group1')">Grupo 1</option>
+                                        <option value="group2">Grupo 2</option>
+                                        <option value="group3">Grupo 3</option>
+                                        <option value="group4">Grupo 4</option>
+
+                                    </select>
+
+
+                                </div>
+
+
+                            </div>
+
+                             <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript' src=''></script>
+                                <script type='text/javascript' src=''></script>
+                                <script type='text/Javascript'>$(document).ready(function(){
+
+var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+removeItemButton: true,
+maxItemCount:5,
+searchResultLimit:5,
+renderChoiceLimit:5
+});
+
+
+});</script>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Edita los bloques y las preguntas de tu encuesta:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Paso 2 - 4</h2>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" />
+                            <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Edita las respuestas:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Paso 3 - 4</h2>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Finalizar" />
+                            <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title"></h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Paso 4 - 4</h2>
+                                    </div>
+                                </div> <br><br>
+                                <h2 class="purple-text text-center"><strong>¡Felicidades!</strong></h2> <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                </div> <br><br>
+                                <div class="row justify-content-center">
+                                    <div class="col-7 text-center">
+                                        <h5 class="purple-text text-center">Tu encuesta ha sido añadida con éxito a la base de datos</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    @Scripts.Render("~/Scripts/añadirEncuesta.js")
+</body>

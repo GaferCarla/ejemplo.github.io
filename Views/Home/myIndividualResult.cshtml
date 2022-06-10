@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "myIndividualResult";
+    @Styles.Render("~/Content/addLicenseStyle.css");
+
+
+
+}
+
+<div class="container main">
+    <!-- Form add ussers partial-->
+
+
+    <form class="my-form">
+
+        <div class="row">
+            <h3 class="text-center">Resultados individuales</h3>
+            <h1 style="padding-left: 1em;">Usuario</h1>
+
+
+            <ul style="padding-top: 3em;">
+
+                <li>
+                    <div class="grid grid-2">
+                        <div class="col1">
+                            <label><n>Selecciona la encuesta:</n></label>
+                            <select>
+
+                                <option selected disabled>-- Seleccione opción --</option>
+                                <option>Opcion 1</option>
+                                <option>Opcion 2</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col1">
+                            <button id="download" class="btn-grid button2" type="button" style="background-color: green; color: white; margin: 2em auto; width: 80%; float: right;">
+                                <span class="back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z" />
+                                        <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z" />
+                                    </svg>
+                                </span>
+                                <span class="front">Descargar resultados</span>
+                            </button>
+
+                        </div>
+
+
+                    </div>
+                </li>
+            </ul>
+            <ul id="hideBlock">
+                <li style="margin: 0;">
+                    <h4 style=" color: #777777; font-weight: 600;">Resultado:</h4>
+                </li>
+                <li>
+                    <div class="row">
+                        <span class="scale col" id="scale1">Nulo</span><span class="scale col" id="scale2">Bajo</span><span class="scale col" id="scale3">Medio</span><span class="scale col" id="scale4">Alto</span><span class="scale col" id="scale5">Muy alto</span>
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul id="hideQuizz">
+                <li class="row">
+                    <h3 style="padding:0 2em ;">Dominio 1</h3>
+                    <div class="row">
+                        <div class="question col-sm-9">
+                            <p>Pregunta 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                        </div>
+                        <div class="answer col-sm-3 ">
+                            <span class="scale justify-content-end" id="scale1">Nulo</span>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="question col-sm-9">
+                            <p>Pregunta 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                        </div>
+                        <div class="answer col-sm-3 ">
+                            <span class="scale justify-content-center" id="scale1">Nulo</span>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="question col-sm-9">
+                            <p>Pregunta 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                        </div>
+                        <div class="answer col-sm-3 ">
+                            <span class="scale justify-content-end" id="scale1">Nulo</span>
+
+                        </div>
+                    </div>
+
+
+
+                </li>
+
+
+            </ul>
+
+        </div>
+    </form>
+
+
+</div>
+
+@Scripts.Render("~/Scripts/individualResult.js");
+
+
+

@@ -1,0 +1,337 @@
+﻿body {
+    background-color: #f0f0f0 !important;
+}
+
+.tabContainer {
+    margin: 2em 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.col2 {
+    width: 50%;
+    font-weight: 800;
+    color: #777777 !important;
+}
+
+.colx2 {
+    width: 50%;
+    display: block;
+    float: left;
+    align-content: center;
+}
+
+
+#nav-usser-tab.active, #nav-import-tab.active {
+    color: #b21d69 !important;
+}
+
+
+
+input,
+select,
+button {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+
+
+button,
+label {
+    cursor: pointer;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+    /* Remove native arrow on IE */
+    select::-ms-expand {
+        display: none;
+    }
+
+    /*Remove dotted outline from selected option on Firefox*/
+    /*https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002*/
+    /*We use !important to override the color set for the select on line 99*/
+    select:-moz-focusring {
+        color: transparent !important;
+        text-shadow: 0 0 0 var(--white);
+    }
+
+textarea {
+    resize: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font: 18px/1.5 "Open Sans", sans-serif;
+}
+
+
+label {
+    cursor: auto;
+    font-weight: 600;
+    color: #777777;
+}
+/* FORM ELEMENTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#nav-tabContent {
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    overflow: hidden;
+    background-color: white;
+}
+
+#nav-usser {
+    padding: 2em;
+}
+
+.col1 {
+    padding: 0 1em 0 0;
+}
+
+.my-form li,
+.my-form .grid > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea,
+.my-form button {
+    line-height: 1.5;
+    padding: 15px 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea {
+    width: 100% !important;
+    max-width: none;
+
+}
+
+
+.my-form ::-moz-placeholder {
+    color: inherit;
+    /*Fix opacity issue on Firefox*/
+    opacity: 0.5;
+}
+
+.my-form :-ms-input-placeholder {
+    color: inherit;
+    /*Fix opacity issue on Firefox*/
+    opacity: 1;
+}
+
+.my-form ::placeholder {
+    color: inherit;
+    /*Fix opacity issue on Firefox*/
+    opacity: 1;
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus,
+.my-form button:enabled:hover,
+.my-form button:focus {
+    background: var(--bgFormElsFocus);
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus {
+    transform: scale(1.02);
+}
+
+.my-form *:required,
+.my-form select {
+    background-repeat: no-repeat;
+    background-position: center right 12px;
+    background-size: 15px 15px;
+}
+
+.my-form *:required {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+.my-form select {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/down.svg);
+}
+
+.my-form *:disabled {
+    cursor: default;
+    filter: blur(2px);
+}
+
+
+/* FORM BTNS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form .required-msg {
+    display: none;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg) no-repeat center left / 15px 15px;
+    padding-left: 20px;
+}
+
+.my-form .btn-grid {
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.2s;
+}
+
+.my-form button {
+    font-weight: bold;
+    margin-top: 17em;
+}
+
+    .my-form button > * {
+        display: inline-block;
+        width: 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .my-form button .back {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-110%, -50%);
+    }
+
+    .my-form button:enabled:hover .back,
+    .my-form button:focus .back {
+        transform: translate(-50%, -50%);
+    }
+
+    .my-form button:enabled:hover .front,
+    .my-form button:focus .front {
+        transform: translateX(110%);
+    }
+
+
+
+
+/* MQ
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 600px) {
+    .my-form .grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .my-form .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .my-form .grid > *:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .my-form .required-msg {
+        display: block;
+    }
+
+    .col1 {
+        padding: 0;
+    }
+
+    .my-form button {
+        margin-top: 13.5em;
+    }
+}
+
+
+
+
+@media screen and (max-width: 599px) {
+    .colx2 {
+        width: 100%;
+    }
+
+    .my-form button {
+        margin-top: 0em;
+    }
+
+    .col1 {
+        padding: 0;
+    }
+}
+
+
+
+/* Drop files here*/
+.wrapper {
+    margin: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.text--center {
+    display: block;
+    text-align: center;
+}
+
+.is-droppable {
+    border: 1px solid #ccc;
+    padding: 3em 5em !important;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+    .is-droppable.is-dragover {
+        border-color: #999;
+        background-color: #e2e2e2;
+    }
+
+.btn--link {
+    color: #0079c1 !important;
+    background: none;
+    border: 0;
+    padding: 0 0.5em !important;
+    cursor: pointer;
+    font-weight: bold !important;
+    margin: 0;
+}
+
+.js .box__file {
+    display: none;
+}
+
+.container small {
+    color: #b21d69;
+}
+
+.smallcontainer {
+    padding: 1em 2em !important;
+}
+
+.container h3 {
+    color: #777777;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 1em 2em;
+}
+
+.smallcontainer .col1 {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.submitButtom {
+    margin: 0 auto !important;
+    padding: 1em 3em;
+    border-radius: 5px;
+    font-weight: bold;
+}

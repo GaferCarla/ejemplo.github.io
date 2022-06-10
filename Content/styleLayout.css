@@ -1,0 +1,362 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins' !important;
+    ;
+}
+
+
+body {
+    font-family: 'Poppins' !important;
+    background-color: aliceblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+    border-bottom: solid 2px #b21d69;
+    height: 88px;
+    background-color: white;
+    font-family: 'Poppins' !important;
+}
+
+.logo {
+    float: left;
+}
+
+    .logo img {
+        height: 60px;
+        margin: 1em 0;
+        padding: 0 1em;
+        top: 0;
+    }
+
+.menuLogin, .menuLogin ul, .menuLogin li, .menuLogin a {
+    margin: 0;
+    padding: 0 !important;
+    border: none;
+    outline: none;
+}
+
+
+    .menuLogin li {
+        position: relative;
+        list-style: none;
+        float: left;
+        display: block;
+    }
+
+    .menuLogin a {
+        text-decoration: none;
+        transition: color .2s ease-in-out;
+    }
+
+    .menuLogin li:firs-child a {
+        border-left: none;
+    }
+
+    .menuLogin li:last-child a {
+        border-right: none;
+    }
+
+    .menuLogin li:hover > a {
+        color: cornflowerblue
+    }
+
+    .menuLogin ul {
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        opacity: 0;
+        background: gainsboro;
+        border-radius: 3px;
+        transition: opacity .20s ease .1s;
+    }
+
+    .menuLogin li:hover > ul {
+        opacity: 1;
+    }
+
+    .menuLogin ul li {
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: height .25s ease .1s;
+    }
+
+    .menuLogin li:hover > ul li {
+        height: auto;
+        overflow: visible;
+        padding: 10px;
+        margin: auto;
+        width: 100%;
+        border-bottom: 1px solid rgb(53,53,57, 0.3);
+    }
+
+    .menuLogin ul li a {
+        width: 100%;
+        margin: auto;
+        padding: 4px 10px !important;
+        border: none;
+    }
+
+    .menuLogin ul li:last-child a {
+        border: none;
+    }
+
+.submenuLogin a {
+    font-weight: 400;
+}
+
+
+
+.greetingUsser {
+    display: block;
+    float: right;
+    color: #b21d69;
+    padding: 1.5em 0em !important;
+    font-size: 1.3em !important;
+    font-family: 'Poppins';
+}
+
+    .greetingUsser a {
+        color: #b21d69;
+        padding: 0 1em 2em 0.2em;
+        font-size: 1em;
+    }
+
+    .greetingUsser span {
+        font-weight: bold;
+    }
+
+        .greetingUsser span svg {
+            top: 4px;
+        }
+
+    .greetingUsser .iconDownArrow {
+        padding: 0 0 0 0.3em;
+    }
+
+img {
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#sidebar {
+    position: fixed;
+    z-index: 99999;
+    width: 300px;
+    min-height: 100%;
+    font-family: 'Poppins' !important;
+    left: -299px;
+    transition: all 800ms ease-in-out;
+    border-right: #b21d69 outset 5px;
+    background-color: white;
+    color: #777777 !important;
+    padding: 2em 1em;
+}
+
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 320px;
+        top: 110px;
+        cursor: pointer;
+    }
+
+.sideContener {
+    position: absolute;
+    padding: 0 0 2em 0;
+    margin: 0;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #b21d69;
+    margin-bottom: 5px;
+}
+
+#sidebar.active {
+    left: 0px;
+    overflow-y: auto;
+}
+
+    #sidebar.active .toggle-btn {
+        top: 20px;
+    }
+
+.navbarencabezados {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 1em 0 0.7em;
+}
+
+    .navbarencabezados svg {
+        margin: 0 0.2em 0 0.6em;
+    }
+
+hr {
+    width: 80% !important;
+    margin: 10px auto 20px !important;
+    opacity: 0.4 !important;
+    height: 1px !important;
+}
+
+ul {
+    width: 100% !important;
+    padding-left: 2rem !important;
+}
+
+#sidebar li {
+    list-style: none !important;
+    padding: 5px 20px 10px !important;
+    text-align: justify;
+}
+
+#sidebar a {
+    color: #777777;
+    font-family: 'Poppins' !important;
+}
+
+
+a {
+    text-decoration: none !important;
+    font-size: 0.9em !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+}
+
+.sub-menu {
+    display: block;
+}
+
+    .sub-menu svg {
+        float: right !important;
+    }
+
+.subMenuList {
+    font-weight: 500 !important;
+    line-height: 0.8em !important;
+}
+
+    .subMenuList:hover {
+        color: #b21d69 !important;
+        font-weight: 700 !important;
+    }
+
+.iconLoginUsser {
+    display: none;
+}
+
+
+@media (max-width: 560px) {
+
+    .greetingUsser .greeting {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .usser {
+        display: none;
+    }
+
+    .iconLoginUsser {
+        display: block;
+    }
+
+
+    .logo img {
+        padding-right: 0.3em;
+    }
+
+    .greetingUsser {
+        min-width: 80px;
+        padding: 0;
+        display: block;
+        float: right;
+    }
+
+
+    .menuLogin li, .menuLogin li a {
+        width: 100%;
+        display: block;
+        float: left;
+        padding: 0 10px 0 0;
+    }
+
+    .iconLoginUsser {
+        float: right;
+        bottom: 0;
+    }
+
+    .iconDownArrow {
+        float: right;
+        bottom: 0;
+    }
+
+    .menuLogin ul {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        opacity: 0;
+        background: gainsboro;
+        border-radius: 3px;
+        transition: opacity .20s ease .1s;
+    }
+}
+
+@media (max-width: 320px) {
+    .logo img {
+        height: 40px;
+        margin: 1.5em 0;
+        padding: 0 0.5em;
+        top: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #sidebar.active {
+        width: 100vw;
+    }
+
+    img {
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    #sidebar .toggle-btn {
+        left: 320px;
+    }
+}
+
+#sidebar.active .toggle-btn {
+    right: 20px !important;
+    left: auto;
+}
+
+
+
+.footer {
+    text-align: center;
+    background-color: #353539;
+    color: white;
+    padding: 1em 0;
+    margin-top: auto;
+    font-weight: bold;
+}

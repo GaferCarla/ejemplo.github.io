@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Editar_permiso";
+    @Styles.Render("~/Content/addLicenseStyle.css");
+
+    @Scripts.Render("~/Scripts/addLicenseScript.js");
+}
+
+<div class="container main">
+    <!-- Form add ussers partial-->
+    <form class="my-form">
+        <div class="container">
+
+            <ul>
+                <li>
+                    <h1>Usuario</h1>
+
+                </li>
+                <li>
+                    <h5>Se unió el <span>fecha</span> a las <span>00:00</span> hrs.</h5>
+
+                </li>
+            </ul>
+            <ul>
+
+                <li>
+                    <div class="grid grid-2">
+                        <div class="col1">
+                            <label>Nombre(s)</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="col1">
+                            <label>Apellido</label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="col1">
+                            <label>Correo</label>
+                            <input type="email" required>
+                        </div>
+
+                        <div class="col1">
+                            <label>Empresa</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="col1">
+                            <label>Departamento</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="col1">
+                            <label>Sucursal</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="col1">
+                            <label>Rol</label>
+                            <select>
+
+                                <option selected disabled>-- Seleccione opción --</option>
+                                <option>Opcion 1</option>
+                                <option>Opcion 2</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="col1">
+                            <label>Grupo</label>
+                            <select id="group">
+
+                                <option selected disabled>-- Seleccione opción --</option>
+                                <option>Opcion 1</option>
+                                <option>Opcion 2</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="grid grid-3" style="padding: 40px 0;">
+                        <div class="required-msg">Campos requeridos</div>
+
+                        <button class="btn-grid button2 btn" id="delete" style="background-color: red; color: white;" type="button" data-toggle="modal" data-target="#deleteModal">
+                            <span class="back">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                                    <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                                </svg>
+                            </span>
+                            <span class="front">Eliminar</span>
+                        </button>
+                        <button class="btn-grid button2" type="submit" style="background-color: green; color: white;">
+                            <span class="back">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg>
+                            </span>
+                            <span class="front">Actualizar</span>
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </form>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+
+                <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro que quieres eliminar a este usuario? Esta acción no se puede deshacer.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-weight: 600;">Cancelar</button>
+                <button type="button" class="btn btn-primary" style="font-weight: 600;">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

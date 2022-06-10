@@ -1,0 +1,194 @@
+﻿<!-- Drop files here partial -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+@{
+    ViewBag.Title = "Resultados_de_mis_usuarios";
+    @Styles.Render("~/Content/styleAddUsser.css");
+    @Styles.Render("~/Content/listUsserStyle.css");
+    @Scripts.Render("~/Scripts/listUsserScript.js");
+}
+
+<div class="container">
+    <nav class="tabContainer">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link col2 active" id="nav-usser-tab" data-bs-toggle="tab" data-bs-target="#nav-usser" type="button" role="tab" aria-controls="nav-usser" aria-selected="true">Mis usuarios</button>
+            <button class="nav-link col2" id="nav-import-tab" data-bs-toggle="tab" data-bs-target="#nav-import" type="button" role="tab" aria-controls="nav-import" aria-selected="false">Resultados generales</button>
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-usser" role="tabpanel" aria-labelledby="nav-usser-tab">
+            <!-- CRUD ussers partial-->
+            <div class="container">
+
+                <div class="container crud-table" ng-app="myApp" ng-controller="namesCtrl">
+                    <div id="crud">
+                        <div class="clearfix">
+
+                            <div class="col2">
+                            </div>
+
+                            <div class="col2">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="col">Buscar por apellido: </label>
+                                        <input class="form-control col" type="text" ng-model="searchName" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th ng-click="orderBy('name')">
+                                        Nombre<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </th>
+                                    <th ng-click="orderBy('lastname')">
+                                        Apellidos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </th>
+                                    <th ng-click="orderBy('email')">
+                                        Email<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </th>
+                                    <th ng-click="orderBy('department')">
+                                        Departamento<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </th>
+                                    <th ng-click="orderBy('office')">
+                                        Sucursal<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr ng-repeat="user in resultUser = (users | filter: {'lastname': searchName}) | orderBy: order">
+                                    <td>
+                                        <a style="cursor: pointer; display: block; float: left;" href="@Url.Action("myIndividualResult","Home")">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                    <td>{{user.name}} </td>
+                                    <td>{{user.lastname}} </td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{user.department}} </td>
+                                    <td>{{user.office}} </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <div class="container">
+
+                            <div class="col2">
+                                <div class="hint-text float-left">Mostrando <b>5</b> resultados de <b>25</b> entradas</div>
+                            </div>
+                            <div class="col2">
+                                <nav>
+                                    <ul class="pagination justify-content-end ">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="tab-pane fade" id="nav-import" role="tabpanel" aria-labelledby="nav-import-tab">
+            <!-- Result partial-->
+            <div class="container">
+                <!-- Form add ussers partial-->
+                <form class="my-form">
+                    <div class="row">
+
+
+                        <ul style="padding-top: 3em;">
+
+                            <li>
+                                <div class="grid grid-2">
+                                    <div class="col1">
+                                        <label><n>Selecciona la encuesta:</n></label>
+                                        <select>
+
+                                            <option selected disabled>-- Seleccione opción --</option>
+                                            <option>Opcion 1</option>
+                                            <option>Opcion 2</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col1">
+                                        <button class="btn-grid button2" type="submit" style="background-color: green; color: white; margin: 2em auto; width: 80%; float: right;">
+                                            <span class="back">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z" />
+                                                    <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z" />
+                                                </svg>
+                                            </span>
+                                            <span class="front">Descargar resultados</span>
+                                        </button>
+
+                                    </div>
+
+
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li style="margin: 0;">
+                                <h4 style=" color: #777777; font-weight: 600;">Resultado:</h4>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <span class="scale col" style="background-color: rgb(41, 133, 156);">Nulo</span><span class="scale col" style="background-color: rgb(49, 153, 40);">Bajo</span><span class="scale col" style="background-color: rgb(223, 148, 37);">Medio</span><span class="scale col" style="background-color: rgb(197, 82, 37);">Alto</span><span class="scale col" style="background-color: rgb(156, 41, 41);">Muy alto</span>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
